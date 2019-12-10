@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CoinApi from './components/coinApi/coinApi'
+import UserInfo from './components/userInfo/userInfo'
+
+import { Provider } from 'react-redux';
+
+import store from './redux/store.js';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div>
+        <nav className="navbar navbar-dark bg-dark">
+            <a className="navbar-brand" href="#">Crypto Alert</a>
+          <Provider store={ store }>
+            <UserInfo/>
+          </Provider>
+        </nav>
+        <div className="container">
+            <div className="row">
+                <div className="col-3">
+                    <span>Notifie</span>
+                </div>
+                <div className="col-9">
+                    <CoinApi/>
+                </div>
+            </div>
+        </div>
+      </div>
+  )
 }
 
 export default App;
