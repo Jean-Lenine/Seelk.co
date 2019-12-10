@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import CoinApi from './components/coinApi/coinApi'
 import UserInfo from './components/userInfo/userInfo'
+import Alert from './components/Alert/alert'
 
 import { Provider } from 'react-redux';
 
@@ -16,10 +17,10 @@ const App: React.FC = () => {
             <UserInfo/>
           </Provider>
         </nav>
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-3">
-                    <span>Notifie</span>
+                    <Alert/>
                 </div>
                 <div className="col-9">
                     <CoinApi/>

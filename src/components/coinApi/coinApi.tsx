@@ -8,17 +8,18 @@ export interface coinApiState {
     listExchangesXRP:any,
     listExchangesLTC:any,
     listExchangesEOS:any,
+    // listExchanges:any,
     iconUrl:any
 }
 
 export default class CoinApi extends React.Component<coinApiProps,coinApiState> {
-    moneys = [
-        'BTC',
-        'ETH',
-        'XRP',
-        'LTC',
-        'EOS'
-    ];
+    // moneys = [
+    //     'BTC',
+    //     'ETH',
+    //     'XRP',
+    //     'LTC',
+    //     'EOS'
+    // ];
 
     constructor(props:coinApiProps){
         super(props)
@@ -28,81 +29,81 @@ export default class CoinApi extends React.Component<coinApiProps,coinApiState> 
             listExchangesXRP:[],
             listExchangesLTC:[],
             listExchangesEOS:[],
+            // listExchanges:[],
             iconUrl:[]
         }
     }
     url = 'https://rest.coinapi.io';
 
-    defineMoney = (Money:string):string => {
+    // defineMoney = (Money:string):string => {
 
-        return `/v1/exchangerate/${Money}/USD?apikey=873874D3-3B6F-471B-987E-84190F3A32AF`
-    }
+    //     return `/v1/exchangerate/${Money}/USD?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F`
+    // }
     
-    callApi = (baseUrl:string, url:string, money:string) => {
-        // this.IconExchanges();
-        axios.get(baseUrl+url,{
-            params:{'X-RateLimit-Limit': 1000000}})
-            // axios.get(this.url+'/v1/exchanges?apikey=873874D3-3B6F-471B-987E-84190F3A32AF')
-            .then(res => {
-                list.map(state=>{
-                    this.setState({ 'listExchanges${money}:res.data' });
-                })
-            })
-        }
+    // callApi = (baseUrl:string, url:string, money:string) => {
+        
+    //     // this.IconExchanges();
+    //     axios.get(baseUrl+url,{
+    //         params:{'X-RateLimit-Limit': 1000000}})
+    //         // axios.get(this.url+'/v1/exchanges?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F')
+    //         .then(res => {
+    //                 this.setState({ 'listExchanges${money}: res.data'});
+    //         })
+    //     }
       
 
-    // ListExchangesBTC(){
-    //     // this.IconExchanges();
-    //     axios.get(this.url+'/v1/exchangerate/BTC/USD?apikey=873874D3-3B6F-471B-987E-84190F3A32AF',{
-    //         params:{'X-RateLimit-Limit': 1000000}})
-    //         // axios.get(this.url+'/v1/exchanges?apikey=873874D3-3B6F-471B-987E-84190F3A32AF')
-    //         .then(res => {
-    //             this.setState({ listExchangesBTC:res.data });
-    //         })
-    //     }
-    // ListExchangesETH(){
-    //     // this.IconExchanges();
-    //     axios.get(this.url+'/v1/exchangerate/ETH/USD?apikey=873874D3-3B6F-471B-987E-84190F3A32AF',{
-    //         params:{'X-RateLimit-Limit': 1000000}})
-    //         // axios.get(this.url+'/v1/exchanges?apikey=873874D3-3B6F-471B-987E-84190F3A32AF')
-    //         .then(res => {
-    //             this.setState({ listExchangesETH:res.data });
-    //         })
-    //     }
-    // ListExchangesXRP(){
-    //     // this.IconExchanges();
-    //     axios.get(this.url+'/v1/exchangerate/XRP/USD?apikey=873874D3-3B6F-471B-987E-84190F3A32AF',{
-    //         params:{'X-RateLimit-Limit': 1000000}})
-    //         // axios.get(this.url+'/v1/exchanges?apikey=873874D3-3B6F-471B-987E-84190F3A32AF')
-    //         .then(res => {
-    //             this.setState({ listExchangesXRP:res.data });
-    //         })
-    //     }
-    // ListExchangesLTC(){
-    //     // this.IconExchanges();
-    //     axios.get(this.url+'/v1/exchangerate/LTC/USD?apikey=873874D3-3B6F-471B-987E-84190F3A32AF',{
-    //         params:{'X-RateLimit-Limit': 1000000}})
-    //         // axios.get(this.url+'/v1/exchanges?apikey=873874D3-3B6F-471B-987E-84190F3A32AF')
-    //         .then(res => {
-    //             this.setState({ listExchangesLTC:res.data });
-    //         })
-    //     }
-    // listExchangesEOS(){
-    //     // this.IconExchanges();
-    //     axios.get(this.url+'/v1/exchangerate/EOS/USD?apikey=873874D3-3B6F-471B-987E-84190F3A32AF',{
-    //         params:{'X-RateLimit-Limit': 1000000}})
-    //         // axios.get(this.url+'/v1/exchanges?apikey=873874D3-3B6F-471B-987E-84190F3A32AF')
-    //         .then(res => {
-    //             this.setState({ listExchangesEOS:res.data });
-    //         })
-    //     }
+    ListExchangesBTC(){
+        // this.IconExchanges();
+        axios.get(this.url+'/v1/exchangerate/BTC/USD?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F',{
+            params:{'X-RateLimit-Limit': 1000000}})
+            // axios.get(this.url+'/v1/exchanges?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F')
+            .then(res => {
+                this.setState({ listExchangesBTC:res.data });
+            })
+        }
+    ListExchangesETH(){
+        // this.IconExchanges();
+        axios.get(this.url+'/v1/exchangerate/ETH/USD?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F',{
+            params:{'X-RateLimit-Limit': 1000000}})
+            // axios.get(this.url+'/v1/exchanges?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F')
+            .then(res => {
+                this.setState({ listExchangesETH:res.data });
+            })
+        }
+    ListExchangesXRP(){
+        // this.IconExchanges();
+        axios.get(this.url+'/v1/exchangerate/XRP/USD?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F',{
+            params:{'X-RateLimit-Limit': 1000000}})
+            // axios.get(this.url+'/v1/exchanges?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F')
+            .then(res => {
+                this.setState({ listExchangesXRP:res.data });
+            })
+        }
+    ListExchangesLTC(){
+        // this.IconExchanges();
+        axios.get(this.url+'/v1/exchangerate/LTC/USD?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F',{
+            params:{'X-RateLimit-Limit': 1000000}})
+            // axios.get(this.url+'/v1/exchanges?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F')
+            .then(res => {
+                this.setState({ listExchangesLTC:res.data });
+            })
+        }
+    listExchangesEOS(){
+        // this.IconExchanges();
+        axios.get(this.url+'/v1/exchangerate/EOS/USD?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F',{
+            params:{'X-RateLimit-Limit': 1000000}})
+            // axios.get(this.url+'/v1/exchanges?apikey=849BAA8F-AF93-4C81-9B5F-327C6E3CD18F')
+            .then(res => {
+                this.setState({ listExchangesEOS:res.data });
+            })
+        }
     componentDidMount(){
-        this.moneys.map(money => {this.callApi(this.url, this.defineMoney(money), money)})
-        // this.ListExchangesBTC()
-        // this.ListExchangesETH()
-        // this.ListExchangesXRP()
-        // this.ListExchangesLTC()
-        // this.listExchangesEOS()
+        // this.moneys.map(money => {this.callApi(this.url, this.defineMoney(money), money)})
+        this.ListExchangesBTC()
+        this.ListExchangesETH()
+        this.ListExchangesXRP()
+        this.ListExchangesLTC()
+        this.listExchangesEOS()
     }
         render(){
             return(
