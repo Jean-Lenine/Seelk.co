@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
       <div>
         <nav className="navbar navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">Crypto Alert</a>
+            <a className="navbar-brand" href="/">Crypto Alert</a>
           <Provider store={ store }>
             <UserInfo/>
           </Provider>

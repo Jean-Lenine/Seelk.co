@@ -1,5 +1,6 @@
 import React from 'react'
 import { Control, Form } from 'react-redux-form';
+import store from './../../redux/store';
 
 export interface userInfoProps{}
 
@@ -22,6 +23,9 @@ export default class userInfo extends React.Component<userInfoProps,userInfoStat
         alert(`Your registration detail: \n 
                Email: ${user.email} \n 
                Name: ${user.name}`)
+        
+               console.log(store.getState())
+        
       }
       render() {
         return (
