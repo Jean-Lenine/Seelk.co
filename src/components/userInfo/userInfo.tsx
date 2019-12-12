@@ -34,10 +34,10 @@ export default class userInfo extends React.Component<userInfoProps,userInfoStat
         return(
         <div>
             {(this.state.user)
-             ?<div className="row">
-             <span className="navbar-text">
+             ?<div className="row user-info">
+             <strong className="navbar-text">
                 {this.state.email}
-              </span>
+              </strong>
                 <button type="button" className="close" aria-label="Close" onClick={()=>this.setState({user:false})}>
                     <span aria-hidden="true">&times;</span>
                 </button>
