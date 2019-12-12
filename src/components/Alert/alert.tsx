@@ -152,7 +152,7 @@ export default class alert extends React.Component<alertProps,alertState> {
                     {(this.state.alertNoMoney)
                     ?
                     <Alert color="danger">
-                        <strong>Please choose Crypto!</strong> here .... 
+                        <strong>Please choose Crypto!</strong>
                     </Alert>
                     :
                         <div></div>
@@ -166,8 +166,8 @@ export default class alert extends React.Component<alertProps,alertState> {
                     :
                         <div></div>
                     }
-                <span>Choose your Crypto : {this.state.listCrypto.map((cripto:any)=><p>{cripto}</p>)}</span>
-                    <div className="col">
+                <span className="crypto">Choose your Crypto : {this.state.listCrypto.map((cripto:any)=><p className="crypto-name">{cripto},</p>)}</span>
+                    <div className="col alert">
                         <div className="row md-checkbox">
                             <label >BTC</label>
                             <input type="checkbox" value="BTC" checked={this.state.BTC} onChange={this.handleCheckedBTC}/>
@@ -189,7 +189,7 @@ export default class alert extends React.Component<alertProps,alertState> {
                             <input type="checkbox" value="EOS" checked={this.state.EOS} onChange={this.handleCheckedEOS}/>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col alert-price">
                         <div className="row">
                             <span>Alert me when the price is below</span>
                         </div>
@@ -206,14 +206,16 @@ export default class alert extends React.Component<alertProps,alertState> {
                                 </div>
                             </div>
                         </div>
-                            <div className="row md-checkbox">
+                        <div className="time">
+                            <div className="md-checkbox">
                                 <label>Hours</label>
                                 <input type="checkbox" checked={this.state.hour} onChange={this.handleTimeHours}/>
                             </div>
-                            <div className="row md-checkbox">
+                            <div className="md-checkbox">
                                 <label>Minute</label>
                                 <input type="checkbox" checked={this.state.minute} onChange={this.handleTimeMinute}/>
                             </div>
+                        </div>
                     </div>
                 </div>
             )

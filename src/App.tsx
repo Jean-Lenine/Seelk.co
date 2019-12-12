@@ -17,12 +17,12 @@ const App: React.FC = () => {
             <UserInfo/>
           </Provider>
         </nav>
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-3">
+        <div className="container-fluid container-app">
+            <div className="row container-coin">
+                <div className="col-3 alert-col">
                     <Alert/>
                 </div>
-                <div className="col-9">
+                <div className="col-9 coinapi-col">
                     <CoinApi/>
                 </div>
             </div>

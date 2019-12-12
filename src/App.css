@@ -43,6 +43,8 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #16161d;
+    color: antiquewhite;
   }
   
   code {
@@ -50,10 +52,43 @@ body {
       monospace;
   }
 
-.table-coin{
+.alert label{
+        padding: 15px;
+}
+.alert div{
+    display: flex;
+    width: 80%;
     justify-content: center;
-    width: 100%;
-    height: auto;
-    margin-top: 25px;
-    border: 1px solid #16161d;
+    align-items: center;
+}
+
+.crypto {
+    display: flex;
+    justify-content: center;
+}
+.crypto-name{
+    padding-left: 5px;
+}
+.time{
+    display: inline-flex;
+    justify-content: center;
+    width: 80%;
+    margin: 15px;
+}
+.time label{
+    padding:10px;
+}
+.table-coin{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.alert-col{
+}
+
+.container-app{
+    /* display: flex; */
+    justify-content: center;
+    /* width: 80%; */
+    /* height: auto; */
 }
