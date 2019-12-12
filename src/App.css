@@ -92,9 +92,12 @@ strong.navbar-text {
 
 }
 .table{height: 100%;}
-
+.table tr {
+    align-items: center;
+}
 .container-app{
     height: 100%;
+    width: 90%;
     margin-top:10%;
     padding: 15px;
     border: 3px solid #fbd682
